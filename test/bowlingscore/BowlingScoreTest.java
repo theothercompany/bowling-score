@@ -51,4 +51,23 @@ public class BowlingScoreTest {
         assertEquals(8, BowlingScore.calculuateGameScore(scoreSheet));
     }
     
+    @Test
+    public void testFrameTwoBallOne() {
+        ScoreSheet scoreSheet = new ScoreSheet();
+        List<FrameScore> fsList = new ArrayList<>();
+        
+        FrameScore fs1 = new FrameScore();
+        fs1.setFirstBall(3);
+        fs1.setSecondBall(5);
+        fsList.add(fs1);
+        
+        FrameScore fs2 = new FrameScore();
+        fs2.setFirstBall(3);
+        fsList.add(fs2);
+        
+        scoreSheet.setFrameScores(fsList);
+        
+        assertEquals(11, BowlingScore.calculuateGameScore(scoreSheet));
+    }
+    
 }
