@@ -37,4 +37,18 @@ public class BowlingScoreTest {
         
     }
     
+    @Test
+    public void testFrameOneBallTwo() {
+        ScoreSheet scoreSheet = new ScoreSheet();
+        FrameScore fs = new FrameScore();
+        List<FrameScore> fsList = new ArrayList<>();
+        
+        fs.setFirstBall(3);
+        fs.setSecondBall(5);
+        fsList.add(fs);
+        scoreSheet.setFrameScores(fsList);
+        
+        assertEquals(8, BowlingScore.calculuateGameScore(scoreSheet));
+    }
+    
 }

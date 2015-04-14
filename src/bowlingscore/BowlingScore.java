@@ -19,7 +19,13 @@ public class BowlingScore {
     }
     
     public static int calculuateGameScore(ScoreSheet sheet) {
-        return 3;
+        int value = 0;
+        
+        for (FrameScore fs: sheet.getFrameScores()) {
+            value = fs.getFirstBall() + fs.getSecondBall();
+        }
+        
+        return value;
     }
     
 }
